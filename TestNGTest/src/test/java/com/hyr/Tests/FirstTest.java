@@ -96,7 +96,16 @@ public class FirstTest {
 	
 	}
 	
-	public void NumberofCarswithBrandName(WebDriver driver) throws Exception {
+	@Test
+	public void NumberofCarswithFerrariBrandName() throws Exception {
+		WebDriverManager.chromedriver().setup();
+		 driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.trademe.co.nz/a/");
+		WebElement motorTab=driver.findElement(By.xpath("/html/body/tm-root/div[1]/main/div/tm-dynamic-homepage/tm-homepage-search-header/nav/div[2]/ul/li[3]/a"));
+		motorTab.click();
+		Thread.sleep(4000);
+		
 		WebElement dropDown=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[1]/tg-col[2]/tg-select-container[1]/div[1]/select[1]"));
 		Select dropdownNumber = new Select(dropDown);
 		dropdownNumber.selectByValue("Ferrari");
@@ -104,11 +113,77 @@ public class FirstTest {
 		SearchButton.click();
 		Thread.sleep(2000);
 		WebElement ShowingNumber=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-search-results[1]/div[1]/div[1]/div[1]/div[1]/tm-search-header-result-count[1]/h3[1]"));
-		String NumberofCars="Number Cars: " + ShowingNumber.getText();
+		String NumberofCars="Number Cars with Ferrari makes are " + ShowingNumber.getText();
 		Thread.sleep(4000);
 		System.out.println(NumberofCars);
 		
 	}
 	
+	@Test
 	
+	public void NumberofCarswithBMWBrandName() throws Exception {
+		WebDriverManager.chromedriver().setup();
+		 driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.trademe.co.nz/a/");
+		WebElement motorTab=driver.findElement(By.xpath("/html/body/tm-root/div[1]/main/div/tm-dynamic-homepage/tm-homepage-search-header/nav/div[2]/ul/li[3]/a"));
+		motorTab.click();
+		Thread.sleep(4000);
+		
+		WebElement dropDown=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[1]/tg-col[2]/tg-select-container[1]/div[1]/select[1]"));
+		Select dropdownNumber = new Select(dropDown);
+		dropdownNumber.selectByValue("BMW");
+		WebElement SearchButton=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[3]/tg-col[3]/button[1]"));
+		SearchButton.click();
+		Thread.sleep(2000);
+		WebElement ShowingNumber=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-search-results[1]/div[1]/div[1]/div[1]/div[1]/tm-search-header-result-count[1]/h3[1]"));
+		String NumberofCars="Number Cars with BMW makes are " + ShowingNumber.getText();
+		Thread.sleep(4000);
+		System.out.println(NumberofCars);
+		
+	}
+	@Test
+	public void NumberofCarswithHondaBrandName() throws Exception {
+		WebDriverManager.chromedriver().setup();
+		 driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.trademe.co.nz/a/");
+		WebElement motorTab=driver.findElement(By.xpath("/html/body/tm-root/div[1]/main/div/tm-dynamic-homepage/tm-homepage-search-header/nav/div[2]/ul/li[3]/a"));
+		motorTab.click();
+		Thread.sleep(4000);
+		
+		WebElement dropDown=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[1]/tg-col[2]/tg-select-container[1]/div[1]/select[1]"));
+		Select dropdownNumber = new Select(dropDown);
+		dropdownNumber.selectByValue("Honda");
+		WebElement SearchButton=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[3]/tg-col[3]/button[1]"));
+		SearchButton.click();
+		Thread.sleep(2000);
+		WebElement ShowingNumber=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-search-results[1]/div[1]/div[1]/div[1]/div[1]/tm-search-header-result-count[1]/h3[1]"));
+		String NumberofCars="Number Cars with Honda makes are " + ShowingNumber.getText();
+		Thread.sleep(4000);
+		System.out.println(NumberofCars);
+		
+	}
+	@Test
+	public void NumberofCarswithMazdaBrandName() throws Exception {
+		WebDriverManager.chromedriver().setup();
+		 driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.trademe.co.nz/a/");
+		WebElement motorTab=driver.findElement(By.xpath("/html/body/tm-root/div[1]/main/div/tm-dynamic-homepage/tm-homepage-search-header/nav/div[2]/ul/li[3]/a"));
+		motorTab.click();
+		Thread.sleep(4000);
+		
+		WebElement dropDown=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[1]/tg-col[2]/tg-select-container[1]/div[1]/select[1]"));
+		Select dropdownNumber = new Select(dropDown);
+		dropdownNumber.selectByValue("Mazda");
+		WebElement SearchButton=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[3]/tg-col[3]/button[1]"));
+		SearchButton.click();
+		Thread.sleep(2000);
+		WebElement ShowingNumber=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-search-results[1]/div[1]/div[1]/div[1]/div[1]/tm-search-header-result-count[1]/h3[1]"));
+		String NumberofCars="Number Cars with Mazda makes are " + ShowingNumber.getText();
+		Thread.sleep(4000);
+		System.out.println(NumberofCars);
+		
+	}
 }

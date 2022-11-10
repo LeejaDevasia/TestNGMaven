@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Runner.Runner">
+      <class name="com.hyr.Tests.FirstTest">
         <methods>
-          <include name="setUpClass"/>
-          <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="NumberofCarswithMazdaBrandName"/>
+          <include name="NumberofCarswithHondaBrandName"/>
+          <include name="NumberofCarswithBMWBrandName"/>
+          <include name="NumberofCarswithFerrariBrandName"/>
+          <include name="afterMethod"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- Runner.Runner -->
+      </class> <!-- com.hyr.Tests.FirstTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

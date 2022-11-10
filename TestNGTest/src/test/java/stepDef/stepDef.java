@@ -36,31 +36,39 @@ public void when_go_to_motors() throws Exception{
 	motorTab.click();
 	Thread.sleep(2000);
   
-	WebElement dropDown=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[1]/tg-col[2]/tg-select-container[1]/div[1]/select[1]"));
-	//dropDown.selectByvalue();
-	Select dropdownNumber = new Select(dropDown);
-	//dropdownNumber.selectByValue("BMW");
-	//dropDown.click();
 	
-	List<WebElement> elementCount = dropdownNumber.getOptions();
-	int number=elementCount.size();
-	System.out.println("Number of items: " +number);
-	Thread.sleep(2000);
 }
 
 @Then("Total Number of brand names should appear")
-public void total_number_of_brand_names_should_appear(WebDriver driver) {
-	
- 
-  System.out.println("Test Passed ");
-	//Thread.sleep(4000);
-	
-	
-		      //  Assert.notNull(number);
-	//driver.close();
-	//driver.quit();
-   
+public void total_number_of_brand_names_should_appear() throws Exception {
+	WebElement dropDown=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[1]/tg-col[2]/tg-select-container[1]/div[1]/select[1]"));
+	Select dropdownNumber = new Select(dropDown);
+	List<WebElement> elementCount = dropdownNumber.getOptions();
+	int number=elementCount.size();
+	System.out.println("Total number of brand is: " +number);
+	Thread.sleep(2000);
 }
+
+
+@When("Click on {string}")
+public void click_on(String string) throws Exception {
+	WebElement dropDown=driver.findElement(By.xpath("/html[1]/body[1]/tm-root[1]/div[1]/main[1]/div[1]/tm-motors-home-page[1]/tm-motors-home-page-header[1]/div[1]/div[1]/tm-motors-search-form[1]/form[1]/tm-motors-used-cars-large[1]/tg-row[1]/tg-col[2]/tg-select-container[1]/div[1]/select[1]"));
+	Select dropdownNumber = new Select(dropDown);
+	dropdownNumber.selectByValue(string);
+	WebElement Searchbutton=driver.findElement(By.xpath("/html/body/tm-root/div[1]/main/div/tm-motors-home-page/tm-motors-home-page-header/div/div/tm-motors-search-form/form/tm-motors-used-cars-large/tg-row[3]/tg-col[3]/button"));
+	Searchbutton.click();
+	Thread.sleep(1000);
+	
+}
+@Then("Total Number of cars with {string} should appear")
+public void total_number_of_cars_with_should_appear(String string) throws Exception {
+	WebElement NumberOfResult=driver.findElement(By.xpath("/html/body/tm-root/div[1]/main/div/tm-motors-search-results/div/div/div[1]/div/tm-search-header-result-count/h3"));
+	System.out.println("Number of cars with " +string+" is " +NumberOfResult.getText());
+	Thread.sleep(2000);
+}
+
+
+
 
 
 }
