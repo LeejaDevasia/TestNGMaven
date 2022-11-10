@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "31abae32-7e82-4662-83a1-03542bb0939d",
+		"name": "TradeMeSandBox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usedcars Number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"km\");\r",
+							"});\r",
+							"pm.test(\"Check the region is New Zealand\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"New Zealand\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.trademe.co.nz/a/motors/cars/search?user_region=70&odometer_min=100",
+					"protocol": "https",
+					"host": [
+						"www",
+						"trademe",
+						"co",
+						"nz"
+					],
+					"path": [
+						"a",
+						"motors",
+						"cars",
+						"search"
+					],
+					"query": [
+						{
+							"key": "user_region",
+							"value": "70"
+						},
+						{
+							"key": "odometer_min",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
